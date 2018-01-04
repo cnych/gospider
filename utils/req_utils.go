@@ -5,6 +5,7 @@ import (
 	"errors"
 	"github.com/PuerkitoBio/goquery"
 	"github.com/franela/goreq"
+	"gopkg.in/cheggaaa/pb.v1"
 	"io"
 	"io/ioutil"
 	"net/http"
@@ -83,7 +84,14 @@ func DownloadFile(url, destFile string) error {
 	if err != nil {
 		return err
 	}
+
+	bar := pb.New(int(res.ContentLength)).SetUnits(pb.U_BYTES)
+	bar.Start()
+
+	reader := bar.NewProxyReader(res.Body)
 	file, _ := os.Create(destFile)
-	io.Copy(file, res.Body)
+	io.Copy(file, reader)
+
+	bar.Finish()
 	return nil
 }

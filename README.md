@@ -6,4 +6,5 @@ Here's how you use `gospider` to download a video from [秒拍](http://m.miaopai
 
 ```console
 $ gospider -o . -O test.mp4 http://m.miaopai.com/show/channel/aOJK9yvtR-HvLTuhVEeLaVsmFBRfEKLo8i3TaA__
+6.79 MiB / 6.79 MiB [======================================================================================================] 100.00% 7s
 ```

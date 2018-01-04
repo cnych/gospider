@@ -99,6 +99,12 @@
 			"revisionTime": "2017-10-31T21:05:36Z"
 		},
 		{
+			"checksumSHA1": "cJE7dphDlam/i7PhnsyosNWtbd4=",
+			"path": "github.com/mattn/go-runewidth",
+			"revision": "97311d9f7767e3d6f422ea06661bc2c7a19e8a5d",
+			"revisionTime": "2017-05-10T07:48:58Z"
+		},
+		{
 			"checksumSHA1": "V/quM7+em2ByJbWBLOsEwnY3j/Q=",
 			"path": "github.com/mitchellh/go-homedir",
 			"revision": "b8bc1bf767474819792c23f32d8286a45736f1c6",
@@ -223,6 +229,12 @@
 			"path": "golang.org/x/text/unicode/norm",
 			"revision": "e19ae1496984b1c655b8044a65c0300a3c878dd3",
 			"revisionTime": "2017-12-24T20:31:28Z"
+		},
+		{
+			"checksumSHA1": "dgrFp6LGa2oel/apJK4FFxSVBXk=",
+			"path": "gopkg.in/cheggaaa/pb.v1",
+			"revision": "18d384da9bdc1e5a08fc2a62a494c321d9ae74ea",
+			"revisionTime": "2017-12-14T13:20:59Z"
 		},
 		{
 			"checksumSHA1": "2aNOQBXINl6ZQGpgfYI46Sxxux8=",
