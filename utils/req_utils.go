@@ -3,13 +3,16 @@ package utils
 import (
 	"bytes"
 	"errors"
+	"fmt"
 	"github.com/PuerkitoBio/goquery"
+	"github.com/cnych/starjazz/mathx"
 	"github.com/franela/goreq"
 	"gopkg.in/cheggaaa/pb.v1"
 	"io"
 	"io/ioutil"
 	"net/http"
 	"os"
+	"strings"
 )
 
 type errorData struct {
@@ -79,13 +82,17 @@ func GetDocument(url string, headers map[string]string) (*goquery.Document, erro
 	return goquery.NewDocumentFromReader(bytes.NewReader(bodyData))
 }
 
-func DownloadFile(url, destFile string) error {
+func DownloadFile(url, destFile string, dpre DownloadPre, dp DownloadPost) error {
 	res, err := http.Get(url)
 	if err != nil {
 		return err
 	}
 
-	bar := pb.New(int(res.ContentLength)).SetUnits(pb.U_BYTES)
+	title := destFile[strings.LastIndex(destFile, "/")+1:]
+	size := int(res.ContentLength)
+	bar := pb.New(size).SetUnits(pb.U_BYTES)
+	// TODO, get site name
+	dpre("Miaopai", title, fmt.Sprintf("%.2f MiB (%d bytes)", mathx.Round(float64(size)/1024/1024, 2), size))
 	bar.Start()
 
 	reader := bar.NewProxyReader(res.Body)
@@ -93,5 +100,11 @@ func DownloadFile(url, destFile string) error {
 	io.Copy(file, reader)
 
 	bar.Finish()
+	dp(fmt.Sprintf("Saving Me at the %s ...Done.", title))
+
 	return nil
 }
+
+type DownloadPost func(info string)
+
+type DownloadPre func(site, title, size string)

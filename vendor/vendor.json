@@ -15,6 +15,12 @@
 			"revisionTime": "2016-12-24T14:14:13Z"
 		},
 		{
+			"checksumSHA1": "+aLWDA4yn3TWlquYtrsemxRb/k8=",
+			"path": "github.com/cnych/starjazz/mathx",
+			"revision": "80944b1bfa69a3094d40bb6bfbb9da7dbe14fc7b",
+			"revisionTime": "2018-01-04T09:15:40Z"
+		},
+		{
 			"checksumSHA1": "3fNi2irNlMcDs4Xrn57f+dcWyGo=",
 			"path": "github.com/franela/goreq",
 			"revision": "bcd34c9993f899273c74baaa95e15386cd97b6e7",
@@ -241,6 +247,10 @@
 			"path": "gopkg.in/yaml.v2",
 			"revision": "c95af922eae69f190717a0b7148960af8c55a072",
 			"revisionTime": "2018-01-02T12:38:42Z"
+		},
+		{
+			"path": "https://github.com/cnych/starjazz/mathx",
+			"revision": ""
 		}
 	],
 	"rootPath": "github.com/cnych/gospider"

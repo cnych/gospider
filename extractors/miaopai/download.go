@@ -20,13 +20,15 @@ type Miaopai struct {
 	url            string
 	outputDir      string
 	outputFilename string
+	showInfo       bool
 }
 
-func NewMiaopai(url, outputDir, outputFilename string) *Miaopai {
+func NewMiaopai(url, outputDir, outputFilename string, showInfo bool) *Miaopai {
 	return &Miaopai{
 		url:            url,
 		outputDir:      outputDir,
 		outputFilename: outputFilename,
+		showInfo:       showInfo,
 	}
 }
 
@@ -43,7 +45,17 @@ func (m *Miaopai) Download() error {
 		} else {
 			destFile = fmt.Sprintf("%s/%s", m.outputDir, m.outputFilename)
 		}
-		if err = utils.DownloadFile(src, destFile); err != nil {
+		var downloadPre utils.DownloadPre = func(site, title, size string) {
+			fmt.Printf("site:				%s\n", site)
+			fmt.Printf("title:				%s\n", title)
+			fmt.Printf("size:				%s\n", size)
+			fmt.Printf("Downloading %s ...\n", title)
+		}
+		var downloadPost utils.DownloadPost = func(info string) {
+			fmt.Println(info)
+		}
+
+		if err = utils.DownloadFile(src, destFile, downloadPre, downloadPost); err != nil {
 			return err
 		}
 	}

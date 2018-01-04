@@ -6,5 +6,10 @@ Here's how you use `gospider` to download a video from [秒拍](http://m.miaopai
 
 ```console
 $ gospider -o . -O test.mp4 http://m.miaopai.com/show/channel/aOJK9yvtR-HvLTuhVEeLaVsmFBRfEKLo8i3TaA__
-6.79 MiB / 6.79 MiB [======================================================================] 100.00% 7s
+site:                           Miaopai
+title:                          林更新视频混剪—追光者.mp4
+size:                           6.79 MiB (7116238 bytes)
+Downloading 林更新视频混剪—追光者.mp4 ...
+ 6.79 MiB / 6.79 MiB [=====================================================================================] 100.00% 7s
+Saving Me at the 林更新视频混剪—追光者.mp4 ...Done.
 ```
