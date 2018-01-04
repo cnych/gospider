@@ -56,8 +56,8 @@ func init() {
 	// rootCmd.PersistentFlags().StringVar(&cfgFile, "config", "", "config file (default is $HOME/.gospider.yaml)")
 
 	rootCmd.PersistentFlags().BoolVarP(&showInfo, "info", "i", false, "see all available quality and formats")
-	rootCmd.PersistentFlags().StringVarP(&outputDir, "output_dir", "o", ".", "set the path of the downloaded file")
-	rootCmd.PersistentFlags().StringVarP(&outputFilename, "output_filename", "O", "", "set the name of the downloaded file")
+	rootCmd.PersistentFlags().StringVarP(&outputDir, "output-dir", "o", ".", "set the path of the downloaded file")
+	rootCmd.PersistentFlags().StringVarP(&outputFilename, "output-filename", "O", "", "set the name of the downloaded file")
 	// Cobra also supports local flags, which will only run
 	// when this action is called directly.
 	// rootCmd.Flags().BoolP("toggle", "t", false, "Help message for toggle")
