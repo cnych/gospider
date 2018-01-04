@@ -5,7 +5,7 @@
 Here's how you use `gospider` to download a video from [秒拍](http://m.miaopai.com/show/channel/aOJK9yvtR-HvLTuhVEeLaVsmFBRfEKLo8i3TaA__):
 
 ```console
-$ gospider -o . -O test.mp4 http://m.miaopai.com/show/channel/aOJK9yvtR-HvLTuhVEeLaVsmFBRfEKLo8i3TaA__
+$ gospider http://m.miaopai.com/show/channel/aOJK9yvtR-HvLTuhVEeLaVsmFBRfEKLo8i3TaA__
 site:                           Miaopai
 title:                          林更新视频混剪—追光者.mp4
 size:                           6.79 MiB (7116238 bytes)
